@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>details</h1>
+<script>
+    let url = new URL(location.href);
+    let id = url.searchParams.get("id");
+    console.log(id)
+
+    fetch('http://jsonplaceholder.typicode.com/users/' + id)
+        .then(value => value.json())
+        .then(value => {
+            console.log(value)
+            let {data:userData} = value;
+            let div = document.createElement('div');
+            let h2 = document.createElement('h2');
+            h2.innerText = `${userData.id} ${userData.name} ${userData.username} ${email} ${address} ${address.street}
+            ${address.suite} ${address.city} ${address.zipcode} ${geo} ${geo.lat} ${geo.lng} ${phone} ${website} ${company}
+            ${company.name} ${company.catchPhrase} ${company.bs}`
+
+
+            div.append(h2)
+            document.body.append(div)
+
+        })
+
+</script>
+</body>
+</html>
