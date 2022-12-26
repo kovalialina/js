@@ -1,0 +1,9 @@
+.xxx{
+    background: #9bafef;
+border: 2px solid #0e1a42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+}
